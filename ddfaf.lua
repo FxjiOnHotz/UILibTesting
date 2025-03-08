@@ -30,14 +30,14 @@ local TasksSection = TasksTab:NewSection("Tasks")
 
 -- Tasks Tab
 
-TasksSection:NewButton("Insta Activate Task", "Sets HoldDuration of all tasks to 0.", function()
+TasksSection:NewButton("Faster Activate Task", "Sets HoldDuration of all tasks to 0.", function()
     for _, containerName in pairs({"ObjectiveInteract", "ObjectiveInteract2", "Objectives1", "Objectives2"}) do
         local container = workspace.Map:FindFirstChild(containerName)
         if container then
             for _, objective in pairs(container:GetChildren()) do
                 for _, descendant in pairs(objective:GetDescendants()) do
                     if descendant:IsA("ProximityPrompt") then
-                        descendant.HoldDuration = 0
+                        descendant.HoldDuration = 1
                     end
                 end
             end
